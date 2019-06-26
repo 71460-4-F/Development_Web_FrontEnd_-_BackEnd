@@ -24,13 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable().authorizeRequests()
 		
 		
-		//.antMatchers("/sobre").hasAnyRole("USER","ADMIN")https://milsabores.herokuapp.com/
-		.antMatchers("https://milsabores.herokuapp.com/").permitAll()
-		.antMatchers("https://milsabores.herokuapp.com").permitAll()
-		.antMatchers("milsabores.herokuapp.com/").permitAll()
-		.antMatchers("https://milsabores.herokuapp.com/*").permitAll()
-		.antMatchers("milsabores.herokuapp.com/*").permitAll()
-		.antMatchers("https://milsabores.herokuapp.com/**").permitAll()
+		//.antMatchers("/sobre").hasAnyRole("USER","ADMIN")
 		.antMatchers("/").permitAll()
 		.antMatchers("/home").permitAll()
 		.antMatchers("/sobre").permitAll()
