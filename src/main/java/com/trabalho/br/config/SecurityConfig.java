@@ -24,7 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable().authorizeRequests()
 		
 		
-		//.antMatchers("/sobre").hasAnyRole("USER","ADMIN")
+		//.antMatchers("/sobre").hasAnyRole("USER","ADMIN")Trab-Web-v2
+		.antMatchers("https://milsabores.herokuapp.com").permitAll()
+		.antMatchers("https://milsabores.herokuapp.com/*").permitAll()
 		.antMatchers("/").permitAll()
 		.antMatchers("/home").permitAll()
 		.antMatchers("/sobre").permitAll()
