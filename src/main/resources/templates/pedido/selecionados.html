@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="/img/favicon.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mil Sabores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/style.css">
+</head>
+<body id="pageClienteCarrinhoActive">
+	<div>
+		<label class="sanduiche"> <span></span> <span></span> <span></span>
+		</label>
+	</div>
+	<nav>
+		<span> <a id="nomeSite" href="index.html">Mil Sabores</a>
+		</span>
+		<ul id="menu">
+			<li><a class="aba1" href="/home">Início</a></li>
+			<li><a class="aba12" href="/pedido/selecionados">Minha Cesta</a></li>
+			<li><a class="aba3" href="/pedido/listar">Meus Pedidos</a></li>
+			<li><a class="aba4" href="/cliente/atualizar">Meus Dados</a></li>
+			<li><a class="aba5" href="/sair">Sair</a></li>
+		</ul>
+	</nav>
+
+	<p id="subTitle">Minha Cesta</p>
+	<section>
+		<table id="tableLista">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th>Quantidade</th>
+					<th>Total</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tr th:each="item: ${session.cesta}">
+				<td scope="row" th:text="${item.prato.nome}"></td>
+				<td scope="row" th:text="${item.prato.preco}"></td>
+				<td scope="row" th:text="${item.quantidade}"></td>
+				<td scope="row" class="valorMoeda" th:text="${item.quantidade * item.preco}"></td>
+				<td><a
+					th:href="@{/pedido/adicionar/{id}(id = ${item.prato.idPrato})}">
+						<button id="bntGreen" type="button">+
+						</button>
+				</a> <a th:href="@{/pedido/remover/{id}(id = ${item.prato.idPrato})}">
+						<button id="bntRed" type="button"> -
+						</button>
+				</a></td>
+			<tr />
+		</table>
+		<h3 id="valorTotalItem" th:text="${session.total}"></h3>
+
+		<a th:href="@{/pedido/salvar}">
+			<button id="bntCadastrar" type="submit">Comprar</button>
+		</a>
+
+	</section>
+	<footer>
+		<span> <a href="https://www.tripadvisor.com.br"
+			title="TripAdvisor"><img id="iconsLink"
+				src="/img/tripAdvisor.Webp" /></a>
+		</span> <span> <a href="https://www.facebook.com/" title="Facebook"><img
+				id="iconsLink" src="/img/facebook.Webp" /></a>
+		</span> <span> <a href="https://www.instagram.com/" title="Instagram"><img
+				id="iconsLink" src="/img/instagram.Webp" /></a>
+		</span> <br>By Tiago A. Fontenele <br> Fone: (99) 9 9999-9999 <br>
+		2019
+	</footer>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/jQueryMask.js"></script>
+	<script src="/js/scriptsJQuery.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="/img/favicon.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mil Sabores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/style.css">
+<script language="JavaScript" type="text/javascript"
+	src="/js/estados-cidades.js"></script>
+
+</head>
+<body id="pageEntrarActive">
+	<div>
+		<label class="sanduiche"> <span></span> <span></span> <span></span>
+		</label>
+	</div>
+	<nav>
+
+		<span> <a id="nomeSite" href="index.html">Mil Sabores</a>
+		</span>
+		<ul id="menu">
+			<li><a class="aba1" href="/">Início</a></li>
+			<li><a class="aba2" href="/sobre">Sobre</a></li>
+			<li><a class="aba3" href="/pratos">Pratos</a></li>
+			<li><a class="aba4" href="/contato">Contato</a></li>
+			<li><a class="aba5" href="/entrar">Entrar</a></li>
+		</ul>
+	</nav>
+
+
+	<p id="subTitle">Entre ou Cadastre-se</p>
+	<section class="secInfo" id="info">
+		<div class="container-fluid">
+			<form method="post">
+				<div th:if="${param.error}">
+					<div class="alert">Ops! Email e/ou senha
+						inválidos.</div>
+				</div>
+				<div th:if="${param.logout}">
+					<div class="alert">Até logo!</div>
+				</div>
+				<br>
+				<div>
+					<div>
+						<label>Email</label>
+						<input type="email" id="inputLogin" name="username" class="form-control" placeholder="Email" required>
+					</div>
+					<div><label>Senha</label>
+					<input type="password" id="inputLogin" name="password" class="form-control" placeholder="Senha" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck">
+						<label class="form-check-label" for="gridCheck"> Lembrar
+							de mim </label>
+					</div>
+					<input id="bntCadastrar" type="submit" value="Entrar">
+				</div>
+				<br>
+				<h3>Criar uma conta</h3>
+				<h4 id="idLink"><a href="/cliente/cadastrar">Criar conta</a></h4>
+	</section>
+
+	<footer>
+		<span> <a href="https://www.tripadvisor.com.br"
+			title="TripAdvisor"><img id="iconsLink"
+				src="/img/tripAdvisor.Webp" /></a>
+		</span> <span> <a href="https://www.facebook.com/" title="Facebook"><img
+				id="iconsLink" src="/img/facebook.Webp" /></a>
+		</span> <span> <a href="https://www.instagram.com/" title="Instagram"><img
+				id="iconsLink" src="/img/instagram.Webp" /></a>
+		</span> <br>By Tiago A. Fontenele <br> Fone: (99) 9 9999-9999 <br>
+		2019
+	</footer>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/jQueryMask.js"></script>
+	<script src="/js/scriptsJQuery.js"></script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+body {
+	background-color: rgb(231, 166, 123);
+	font-family: 'Times New Roman', Times, serif;
+	color: rgba(121, 17, 17, 0.815);
+	margin: 0%;
+}
+
+#pageHomeActive a.aba1 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageSobreActive a.aba2 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pagePratosActive a.aba3 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageContatoActive a.aba4 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageEntrarActive a.aba5 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageGerentePratosActive a.aba6 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageGerenteClientesActive a.aba7 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageGerentePedidosActive a.aba8 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageUserActive a.aba9 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageContaActive a.aba10 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageClientePedidoActive a.aba11 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+#pageClienteCarrinhoActive a.aba12 {
+	background-color: rgba(121, 17, 17, 0.815);
+	color: whitesmoke;
+}
+
+h1, h2, h3 {
+	margin: 0%;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	font-weight: bold;
+}
+
+p {
+	font-style: italic;
+}
+
+nav {
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+}
+
+nav span a { /*nome site*/
+	text-decoration: none;
+	color: rgba(121, 17, 17, 0.815);
+	font-size: 200%;
+	font-style: italic;
+	font-weight: bold;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0%;
+	margin: 0%;
+	display: inline-flex;
+	flex-direction: initial;
+	align-items: center;
+	width: 100%;
+}
+
+nav ul li {
+	text-align: center;
+	width: 60%;
+	padding: 1%;
+}
+
+nav ul li a {
+	background-color: rgba(124, 6, 6, 0.616);
+	text-decoration: none;
+	display: inline-block;
+	padding: 12px 0px;
+	width: 100%;
+	color: rgb(231, 166, 123);
+	border-radius: 30px;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+nav ul li :hover {
+	background-color: rgba(121, 17, 17, 0.815);
+	text-decoration: none;
+}
+
+header {
+	background-image: url('img/principal.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 10%;
+}
+
+header span section h3 {
+	text-align: center;
+	padding-top: 20px;
+}
+
+header span section p {
+	text-align: center;
+	padding: 15px;
+	font-size: 20px;
+}
+
+section h3 {
+	font-size: 160%;
+}
+
+.secHome p:first-letter {
+	font-size: 200%;
+}
+
+#subTitle {
+	text-align: center;
+	color: aliceblue;
+	background-color: rgba(124, 6, 6, 0.616);
+	font-size: 200%;
+	font-style: italic;
+	font-weight: bold;
+	padding: 10px;
+}
+
+#imgLogo {
+	max-width: 150px;
+	height: auto;
+}
+
+.conteiner {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.conteiner span {
+	display: inline-block;
+	background-image: url('img/fundo-pratos.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 10px;
+	border-radius: 10%;
+	padding-bottom: 20px;
+}
+
+.conteiner span img {
+	width: 400px;
+	height: 300px;
+	margin: 10px;
+	border-radius: 10%;
+}
+
+.conteiner h1, h2 {
+	background-color: aliceblue;
+	color: black;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+.secHome {
+	background-color: rgba(165, 56, 42, 0.877);
+	border-radius: 10px;
+}
+
+section {
+	text-align: center;
+	margin: 20px;
+}
+
+section p {
+	font-size: 120%;
+}
+
+.secInfo p:first-letter {
+	font-size: 200%;
+}
+
+.hedaerSobre span {
+	background-color: rgba(161, 83, 64, 0.863);
+	border-radius: 30px;
+}
+
+#BtMostrarMais {
+	display: block;
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;;
+	font-weight: bolder;
+	font-style: italic;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+
+#BtMostrarMais {
+	background-color: rgba(121, 17, 17, 0.815);
+}
+
+form {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+#inputNome {
+	text-align: center;
+	width: 260px;
+}
+
+#inputEmail {
+	text-align: center;
+	width: 230px;
+}
+
+#inputTel {
+	text-align: center;
+	width: 100px;
+}
+
+#textarea {
+	width: 300px;
+}
+
+footer {
+	background-color: rgba(124, 6, 6, 0.616);
+	text-align: center;
+	font-size: 80%;
+	size: 10%;
+	padding: 5px;
+}
+
+#tableLista {
+	text-align: center;
+	border: 0;
+	border-color: rgb(231, 166, 123);
+	width: 100%;
+	padding: 5px;
+}
+
+#tableLista th {
+	font-size: 25px; rgb (231, 166, 123);
+	font-weight: bolder;
+	font-style: italic;
+}
+
+#tableLista td {
+	font-size: 16px;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+#imgPratosGerente {
+	width: 170px;
+	height: 120px;
+	border-radius: 3px;
+}
+
+#bntRed {
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;
+	font-weight: bolder;
+	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#bntGreen {
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;;
+	font-weight: bolder;
+	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#bntCadastrar {
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;;
+	font-weight: bolder;
+	font-style: italic;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+}
+
+#bntComprar {
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;;
+	font-weight: bolder;
+	font-style: italic;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+#bntEnviar {
+	text-align: center;
+	color: rgb(231, 166, 123);
+	padding: 10px 35px;
+	background-color: rgba(121, 17, 17, 0.815);
+	font-size: 120%;
+	border-radius: 30px;;
+	font-weight: bolder;
+	font-style: italic;
+	margin-left: 20px;
+}
+
+#inputLogin {
+	font-size: 15px;
+	border-radius: 6px;
+	-moz-border-radius: 4px;
+	border: 3px solid rgba(121, 17, 17, 0.815);
+	width: 250px;
+	max-width: 80%;
+	height: 30px;
+	margin-bottom: 4px
+}
+
+.validate {
+	font-size: 15px;
+	border-radius: 6px;
+	-moz-border-radius: 4px;
+	border: 3px solid rgba(121, 17, 17, 0.815);
+	width: 300px;
+	max-width: 80%;
+	height: 30px;
+	margin-bottom: 4px;
+	padding: 3px;
+}
+
+label.validateLabel {
+	display: inline-block;
+	width: 90px;
+}
+
+#formCadastro {
+	background-color: lime;
+	text-align: center;
+}
+
+.alert{
+	font-size: 23px;
+}
+
+/* tablet*/
+@media ( min-width : 481px) and (max-width: 991px) {
+	nav {
+		text-align: center;
+		text-decoration: none;
+		display: block;
+	}
+	.conteiner span img {
+		width: 98%;
+		height: 97%;
+		margin: 10px;
+		border-radius: 10%;
+	}
+}
+
+/*smartphone*/
+@media ( max-width : 480px) {
+	nav {
+		text-decoration: none;
+		display: flex;
+		flex-direction: initial;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	nav ul {
+		position: fixed;
+		display: none;
+		top: 50px;
+		list-style: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background-color: rgb(233, 185, 153);
+	}
+	nav span a { /*nome site*/
+		padding: 20px;
+	}
+	nav ul li {
+		text-align: center;
+		width: 98%;
+		padding: 1%;
+	}
+	#imgLogo {
+		max-width: 30%;
+		height: auto;
+	}
+
+	/*sanduiche*/
+	.sanduiche {
+		top: 10px;
+		right: 10px;
+		float: right;
+		padding: 5px;
+		position: fixed;
+	}
+	.sanduiche span {
+		display: block;
+		width: 34px;
+		height: 5px;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		background: rgba(121, 17, 17, 0.815);
+		border-radius: 3px;
+	}
+
+	/*redefin tam imagens pratos*/
+	.conteiner span img {
+		width: 98%;
+		height: 97%;
+		margin: 3px;
+		border-radius: 10%;
+	}
+}

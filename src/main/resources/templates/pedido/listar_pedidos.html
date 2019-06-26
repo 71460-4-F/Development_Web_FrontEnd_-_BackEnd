@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="/img/favicon.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mil Sabores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/style.css">
+</head>
+<body id="pageClientePedidoActive">
+	<div>
+		<label class="sanduiche"> <span></span> <span></span> <span></span>
+		</label>
+	</div>
+	<nav>
+		<span> <a id="nomeSite" href="index.html">Mil Sabores</a>
+		</span>
+		<ul id="menu">
+			<li><a class="aba1" href="/home">Início</a></li>
+			<li><a class="aba2" href="/pedido/selecionados">Minha Cesta</a></li>
+			<li><a class="aba11" href="/pedido/listar">Meus Pedidos</a></li>
+			<li><a class="aba4" href="/cliente/atualizar">Meus Dados</a></li>
+			<li><a class="aba5" href="/sair">Sair</a></li>
+		</ul>
+	</nav>
+	<p id="subTitle">Meus Pedidos</p>
+	<section>
+
+		<table id="tableLista">
+			<thead>
+				<tr>
+					<th scope="col">Cód. Pedido</th>
+					<th scope="col">Nome Cliente</th>
+					<th scope="col">Data / Hora</th>
+					<th scope="col">Total</th>
+					<th scope="col">Estatus</th>
+					<th scope="col"></th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pedido: ${listaPedidos}">
+					<td scope="row" th:text="${pedido.idPedido}"></td>
+					<td scope="row" th:text="${pedido.cliente.nome}"></td>
+					<td scope="row" th:text="${{pedido.dataPedido}}"></td>
+					<td scope="row" th:text="${'R$ ' + pedido.total}"></td>
+					<td scope="row"
+						th:text="${pedido.pendente == 1 ? 'Pendente' : 'Enviado'}"></td>
+					<td><a th:href="@{/item/listar/{id}(id = ${pedido.idPedido})}">
+							<button id="bntComprar" type="button">Detalhes</button>
+					</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<footer>
+		<span> <a href="https://www.tripadvisor.com.br"
+			title="TripAdvisor"><img id="iconsLink"
+				src="/img/tripAdvisor.Webp" /></a>
+		</span> <span> <a href="https://www.facebook.com/" title="Facebook"><img
+				id="iconsLink" src="/img/facebook.Webp" /></a>
+		</span> <span> <a href="https://www.instagram.com/" title="Instagram"><img
+				id="iconsLink" src="/img/instagram.Webp" /></a>
+		</span> <br>By Tiago A. Fontenele <br> Fone: (99) 9 9999-9999 <br>
+		2019
+	</footer>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/jQueryMask.js"></script>
+	<script src="/js/scriptsJQuery.js"></script>
+</body>
+</html>

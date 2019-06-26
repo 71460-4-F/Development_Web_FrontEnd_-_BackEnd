@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="/img/favicon.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mil Sabores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/style.css">
+</head>
+<body id="pageGerentePratosActive">
+	<div>
+		<label class="sanduiche"> <span></span> <span></span> <span></span>
+		</label>
+	</div>
+	<nav>
+		<span> <a id="nomeSite" href="index.html">Mil Sabores</a>
+		</span>
+		<ul id="menu">
+			<li><a class="aba1" href="/home">Início</a></li>
+			<li><a class="aba6" href="/gerente/prato/listar">Pratos</a></li>
+			<li><a class="aba7" href="/gerente/cliente/listar">Clientes</a></li>
+			<li><a class="aba8" href="/pedido/listar_pendente">Pedidos</a></li>
+			<li><a class="aba9" href="/sair">Sair</a></li>
+		</ul>
+	</nav>
+	<p id="subTitle">Pratos Cadastrados</p>
+	<table id="tableLista">
+		<thead>
+			<tr>
+				<th scope="col">Código</th>
+				<th scope="col">Nome do Prato</th>
+				<th scope="col">Preço do prato</th>
+				<th scope="col">Imagem do prato</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="prato: ${listaPratos}">
+				<div th:if="${prato.status == 1}">
+					<td scope="row" th:text="${prato.idPrato}"></td>
+					<td scope="row" th:text="${prato.nome}"></td>
+					<td scope="row" th:text="${'R$ ' + prato.preco}"></td>
+					<td scope="row"><img id="imgPratosGerente"
+						th:src="@{'/images/' + ${prato.nome} + ${prato.idPrato} + '.png'}"></td>
+					<td><a
+						th:href="@{/gerente/prato/excluir/{id}(id = ${prato.idPrato})}">
+							<button id="bntRed" class="btn" type="button">Excluir</button>
+					</a></td>
+					<td><a
+						th:href="@{/gerente/prato/atualizar/{id}(id = ${prato.idPrato})}">
+							<button id="bntGreen" class="btn" type="button">Atualizar</button>
+					</a></td>
+				</div>
+			</tr>
+		</tbody>
+	</table>
+
+	<a th:href="@{/gerente/prato/cadastrar}">
+		<button id="bntCadastrar" class="btn" type="button">Cadastrar</button>
+	</a>
+
+	<footer>
+		<span> <a href="https://www.tripadvisor.com.br"
+			title="TripAdvisor"><img id="iconsLink"
+				src="/img/tripAdvisor.Webp" /></a>
+		</span> <span> <a href="https://www.facebook.com/" title="Facebook"><img
+				id="iconsLink" src="/img/facebook.Webp" /></a>
+		</span> <span> <a href="https://www.instagram.com/" title="Instagram"><img
+				id="iconsLink" src="/img/instagram.Webp" /></a>
+		</span> <br>By Tiago A. Fontenele <br> Fone: (99) 9 9999-9999 <br>
+		2019
+	</footer>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/jquery.mask.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/jQueryMask.js"></script>
+	<script src="/js/scriptsJQuery.js"></script>
+</body>
+</html>

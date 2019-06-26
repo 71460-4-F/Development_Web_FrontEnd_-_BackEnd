@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="/img/favicon.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mil Sabores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/style.css">
+</head>
+<body id="pageContaActive">
+	<div>
+		<label class="sanduiche"> <span></span> <span></span> <span></span>
+		</label>
+	</div>
+	<nav>
+		<span> <a id="nomeSite" href="index.html">Mil Sabores</a>
+		</span>
+		<ul id="menu">
+			<li><a class="aba1" href="/home">Início</a></li>
+			<li><a class="aba12" href="/pedido/selecionados">Minha Cesta</a></li>
+			<li><a class="aba11" href="/pedido/listar">Meus Pedidos</a></li>
+			<li><a class="aba10" href="/cliente/atualizar">Meus Dados</a></li>
+			<li><a class="aba5" href="/sair">Sair</a></li>
+		</ul>
+	</nav>
+	<p id="subTitle">Dados da Conta</p>
+	<section>
+		<span>
+			<form action="/cliente/salvar" method="post" th:object="${cliente}">
+				<input th:field="*{idCliente}" type="hidden">
+				<div>
+					<label class="validateLabel" for="nome_cliente">Nome</label> <input
+						class="validate" id="nome_cliente" placeholder="Nome do Cliente"
+						required th:field="*{nome}" type="text"> <span
+						class="red-text" th:if="${#fields.hasErrors('nome')}">Nome
+						Inválido</span>
+				</div>
+				<div>
+					<label class="validateLabel" for="cpf_cliente">CPF</label> <input
+						class="validate" data-mask="000.000.000-00" id="inputCPF"
+						placeholder="000.000.000-00" required th:field="*{cpf}"
+						type="text"> <span class="red-text"
+						th:if="${#fields.hasErrors('cpf')}">CPF Inválido</span>
+					<div>
+						<label class="validateLabel" for="nascimento_cliente">Data
+							Nascimento</label> <input class="validate" data-mask="00/00/0000"
+							id="inputDATA"
+							pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
+							placeholder="00/00/0000" required th:field="*{dataNascimento}"
+							type="text"> <span class="red-text"
+							th:if="${#fields.hasErrors('dataNascimento')}">Data
+							Inválida</span>
+					</div>
+					<div class="input-field col s12">
+						<label class="validateLabel" for="email_cliente">Email</label> <input
+							class="validate" id="email_cliente"
+							placeholder="cliente@email.com" required th:field="*{email}"
+							type="email"> <span class="red-text"
+							th:if="${#fields.hasErrors('email')}">Email Inválido</span>
+					</div>
+					<div class="input-field col s12">
+						<label class="validateLabel" for="senha_cliente">Senha</label> <input
+							class="validate" id="senha_cliente" placeholder="Senha Cliente"
+							required th:field="*{senha}" type="password"> <span
+							class="red-text" th:if="${#fields.hasErrors('senha')}">Senha
+							Inválida</span>
+
+					</div>
+				</div>
+				<span></span> <span>
+					<div class="card-content">
+						<span> <span class="card-title"><p>Endereço</p> </span>
+							<div class="row">
+								<div class="input-field col s10">
+									<label class="validateLabel" for="rua_cliente">Rua</label> <input
+										class="validate" id="rua_cliente" placeholder="Rua" required
+										th:field="*{endereco.rua}" type="text">
+								</div>
+								<div class="input-field col s2">
+									<label class="validateLabel" for="numero_cliente">Numero</label>
+									<input class="validate" id="numero_cliente"
+										placeholder="Numero" required th:field="*{endereco.numero}"
+										type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s6">
+									<label class="validateLabel" for="bairro_cliente">Bairro</label>
+									<input class="validate" id="bairro_cliente"
+										placeholder="Bairro" required th:field="*{endereco.bairro}"
+										type="text">
+								</div>
+								<div class="input-field col s6">
+									<label class="validateLabel" for="cidade_cliente">Cidade</label>
+									<input class="validate" id="cidade_cliente"
+										placeholder="Cidade" required th:field="*{endereco.cidade}"
+										type="text">
+
+								</div>
+								<span class="red-text" th:if="${#fields.hasErrors('endereco')}">Endereço
+									Inválido</span>
+							</div>
+					</div>
+
+					<button id="bntComprar" type="submit">
+						<span
+							th:text="${cliente.idCliente != null} ? 'Atualizar' : 'Cadastrar'"></span>
+
+					</button>
+
+					<td th:if="${cliente.idCliente != null}"><a
+						th:href="@{/cliente/excluir/{id}(id = *{idCliente})}">
+							<button id="bntComprar" type="button">Excluir</button>
+					</a></td> <span></span>
+			</form>
+		</span>
+	</section>
+	<footer>
+		<span> <a href="https://www.tripadvisor.com.br"
+			title="TripAdvisor"><img id="iconsLink"
+				src="/img/tripAdvisor.Webp" /></a>
+		</span> <span> <a href="https://www.facebook.com/" title="Facebook"><img
+				id="iconsLink" src="/img/facebook.Webp" /></a>
+		</span> <span> <a href="https://www.instagram.com/" title="Instagram"><img
+				id="iconsLink" src="/img/instagram.Webp" /></a>
+		</span> <br>By Tiago A. Fontenele <br> Fone: (99) 9 9999-9999 <br>
+		2019
+	</footer>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/jQueryMask.js"></script>
+	<script src="/js/scriptsJQuery.js"></script>
+</body>
+</html>
