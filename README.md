@@ -1,4 +1,5 @@
 #  Development_Web_FrontEnd_-_BackEnd (Mil Sabores)
+[![Visits Badge](https://badges.pufler.dev/visits/71460-4-F/Development_Web_FrontEnd_-_BackEnd)](https://badges.pufler.dev)
 
 ## Worked
 - [x] Java
